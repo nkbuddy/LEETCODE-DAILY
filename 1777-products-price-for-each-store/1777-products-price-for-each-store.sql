@@ -18,5 +18,3 @@ FROM
     s3 ON p.product_id = s3.product_id
 GROUP BY
     p.product_id
-ORDER BY
-    p.product_id
