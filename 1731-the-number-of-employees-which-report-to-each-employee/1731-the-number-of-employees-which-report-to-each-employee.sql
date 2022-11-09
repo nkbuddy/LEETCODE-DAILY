@@ -9,7 +9,7 @@ WHERE
     e2.reports_to = e1.employee_id
 )
 SELECT
-    employee_id, name, COUNT(reports) AS 'reports_count', ROUND(SUM(average_age)/COUNT(reports)) AS 'average_age'
+    employee_id, name, COUNT(reports) AS 'reports_count', ROUND(AVG(average_age)) AS 'average_age'
 FROM
     manager m
 GROUP BY
