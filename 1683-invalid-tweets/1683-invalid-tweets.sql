@@ -4,4 +4,4 @@ SELECT
 FROM
     Tweets
 WHERE
-    LENGTH(content) > 15
+    CHAR_LENGTH(content) > 15
