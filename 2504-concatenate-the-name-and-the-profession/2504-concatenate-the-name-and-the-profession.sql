@@ -1,0 +1,7 @@
+# Write your MySQL query statement below
+SELECT
+    person_id, concat(name,'(',LEFT(profession,1),')') AS 'name'
+FROM
+    Person
+ORDER BY
+    person_id DESC
