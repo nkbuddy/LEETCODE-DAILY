@@ -1,10 +1,14 @@
 public class Solution {
     public int SearchInsert(int[] nums, int target) {
-        for(int i=0;i<nums.Length;i++){
-            if(nums[i]>=target){
-                return i;
-            }
-        }
-        return nums.Length;
+        int pivot;
+        int left = 0;
+        int right = nums.Length - 1;
+    while (left <= right) {
+      pivot = left + (right - left) / 2;
+      if (nums[pivot] == target) return pivot;
+      if (target < nums[pivot]) right = pivot - 1;
+      else left = pivot + 1;
+    }
+    return left;
     }
 }
