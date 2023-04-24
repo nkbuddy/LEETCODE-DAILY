@@ -3,12 +3,8 @@
  * @return {Function}
  */
 var compose = function(functions) {
-	return (num) =>{
-        bigfunctions = [...functions].reverse();
-        bigfunctions.map((func)=>{
-            num = func(num);
-        })
-        return num;
+	return function(x) {
+        return functions.reduceRight((acc,fn)=>{return fn(acc)},x);
     }
 };
 
