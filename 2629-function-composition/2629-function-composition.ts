@@ -1,12 +1,8 @@
 type F = (x: number) => number;
 
 function compose(functions: F[]): F {
-	return (num)=> {
-        functions = [...functions].reverse();
-        functions.map((func)=>{
-            num = func(num);
-        })
-        return num;
+	return function(x) {
+        return functions.reduceRight(((acc,fuc)=>{return fuc(acc)}),x);
     }
 };
 
