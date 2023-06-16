@@ -8,7 +8,7 @@ function rotate(nums: number[], k: number): void {
     reverse(nums,k,nums.length-1);
 };
 
-function reverse(nums:number[],start:number,end:number){
+function reverse(nums:number[],start:number,end:number):void{
     while(start<end){
         let temp:number = nums[start];
         nums[start] = nums[end];
