@@ -2,14 +2,11 @@
  Do not return anything, modify nums in-place instead.
  */
 function rotate(nums: number[], k: number): void {
-    k %= nums.length;
-    let temp:number,previous:number;
-    for(let i=0;i<k;i++){
-        previous = nums[nums.length-1];
-        for(let j=0;j<nums.length;j++){
-            temp = nums[j];
-            nums[j]=previous;
-            previous = temp;
-        }
+    let a:number[]=[];
+    for(let i = 0;i<nums.length;i++){
+        a[(i+k)%nums.length]=nums[i];
+    }
+    for(let i=0;i<nums.length;i++){
+        nums[i]=a[i];
     }
 };
